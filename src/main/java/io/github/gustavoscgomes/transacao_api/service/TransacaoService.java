@@ -50,15 +50,4 @@ public class TransacaoService {
                 .toList();
     }
 
-    public EstatisticaDTO listarEstatisticas(Integer intevalo) {
-        List<TransacaoDTO> transacaoDTOS = listarTransacoes(intevalo);
-
-        DoubleSummaryStatistics doubleSummaryStatistics = transacaoDTOS.stream()
-                .mapToDouble(TransacaoDTO::valor)
-                .summaryStatistics();
-
-        return new EstatisticaDTO(doubleSummaryStatistics.getCount(),
-                doubleSummaryStatistics.getSum(), doubleSummaryStatistics.getAverage(),
-                doubleSummaryStatistics.getMin(), doubleSummaryStatistics.getMax());
-    }
 }
