@@ -19,7 +19,6 @@ import java.util.List;
 public class TransacaoService {
 
     private final List<TransacaoDTO> transacoes = new ArrayList<>();
-    private final List<EstatisticaDTO> estatisticas = new ArrayList<>();
 
     public void adicionarTransacao(TransacaoDTO transacaoDTO) {
         log.info("Gravando Transação...");
@@ -35,15 +34,24 @@ public class TransacaoService {
         }
 
         transacoes.add(transacaoDTO);
+
+        log.info("Transação gravada com sucesso:{}", transacaoDTO);
     }
 
     public void limparTransacoes() {
-        log.info("Limpando Transações...");
+        log.info("Apagando informações...");
+
         transacoes.clear();
+
+        log.info("Todas as informações foram apagadas com sucesso");
     }
 
     public List<TransacaoDTO> listarTransacoes(Integer intervalo) {
+        log.info("Buscando transações...");
+
         OffsetDateTime dataHoraIntervalo = OffsetDateTime.now().minusSeconds(intervalo);
+
+        log.info("Transações retornadas com sucesso");
 
         return transacoes.stream()
                 .filter(transacao -> transacao.dataHora().isAfter(dataHoraIntervalo))

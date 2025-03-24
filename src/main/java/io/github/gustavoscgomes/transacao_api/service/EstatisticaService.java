@@ -17,11 +17,15 @@ public class EstatisticaService {
     private final TransacaoService transacaoService;
 
     public EstatisticaDTO listarEstatisticas(Integer intevalo) {
+        log.info("Buscando Estatísticas...");
+
         List<TransacaoDTO> transacaoDTOS = transacaoService.listarTransacoes(intevalo);
 
         DoubleSummaryStatistics doubleSummaryStatistics = transacaoDTOS.stream()
                 .mapToDouble(TransacaoDTO::valor)
                 .summaryStatistics();
+
+        log.info("Estatísticas Retornadas com sucesso!");
 
         return new EstatisticaDTO(doubleSummaryStatistics.getCount(),
                 doubleSummaryStatistics.getSum(), doubleSummaryStatistics.getAverage(),
