@@ -113,6 +113,9 @@ A aplicação será iniciada na porta **8080**.
 
 ## Contato
 
+[![LinkedIn][linkedin-shield]][linkedin-url]
+[![Gmail][gmail-shield]][gmail-url]
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -122,3 +125,5 @@ A aplicação será iniciada na porta **8080**.
 [Java-url]: https://www.java.com/
 [linkedin-shield]: https://img.shields.io/badge/-Gustavoscgomes-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
 [linkedin-url]: https://linkedin.com/in/gustavoscgomes
+[gmail-shield]: https://img.shields.io/badge/-gustavoscostagomes-D14836?style=for-the-badge&logo=gmail&logoColor=white
+[gmail-url]: mailto:gustavoscostagomes@gmail.com
