@@ -7,7 +7,7 @@
     <li>
       <a href="#sobre-o-projeto">Sobre o Projeto</a>
       <ul>
-        <li><a href="#construido-com">Contruído com</a></li>
+        <li><a href="#construído-com">Contruído com</a></li>
       </ul>
     </li>
     <li>
