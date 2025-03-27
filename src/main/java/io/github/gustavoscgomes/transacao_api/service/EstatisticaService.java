@@ -25,7 +25,12 @@ public class EstatisticaService {
                 .mapToDouble(TransacaoDTO::valor)
                 .summaryStatistics();
 
-        log.info("Estatísticas Retornadas com sucesso!");
+        if (transacaoDTOS.isEmpty()) {
+            log.info("Não há transações registradas nos últimos 60 segundos");
+            return new EstatisticaDTO(0l, 0.0, 0.0, 0.0, 0.0);
+        }
+
+        log.info("Estatísticas Retornadas com sucesso");
 
         return new EstatisticaDTO(doubleSummaryStatistics.getCount(),
                 doubleSummaryStatistics.getSum(), doubleSummaryStatistics.getAverage(),
